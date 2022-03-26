@@ -117,3 +117,11 @@ train_df["Age"] = train_df["Age"].fillna(train_df["Age"].mean())
 train_df["Age"].head()
 #checking if there are any remaining missing value
 train_df.Age.isnull().sum()
+
+
+# % of rows missing in each column
+
+for column in train_df.columns:
+    percentage = train_df[column].isnull().mean()
+    print(f'{column}: {round(percentage*100,4)}%')
+
