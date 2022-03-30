@@ -125,3 +125,105 @@ for column in train_df.columns:
     percentage = train_df[column].isnull().mean()
     print(f'{column}: {round(percentage*100,4)}%')
 
+#####New Additions 
+
+###insert this plot at the begining of the data when we still had missing values, this is a graphical presentation of the variable where there is missing data in the data set
+
+plt.subplots(figsize=(10,6)) #the figsize help zoom our plot to give a better visible view
+sns.heatmap(train_df.isnull(), cbar=False, cmap="YlGnBu_r")
+plt.show()
+
+
+
+
+categorical_variable = ['Survived', 'Sex', 'Pclass', 'SibSp', 'Parch', 'Embarked']
+
+'Our desired number of plot row and column size'
+categorical_plot_nrows = 2
+categorical_plot_ncols = 3
+
+fig, axs = plt.subplots(categorical_plot_nrows, categorical_plot_ncols, figsize=(categorical_plot_ncols*3.5, categorical_plot_nrows*3))
+
+for r in range(0, categorical_plot_nrows):
+    for c in range(0, categorical_plot_ncols):
+        
+        i = r*categorical_plot_ncols+c
+        ax = axs[r][c]
+        sns.countplot(train_df[categorical_variable[i]], hue=train_df["Survived"], ax=ax)
+        ax.set_title(categorical_variable[i], fontsize=12, fontweight="bold")
+        ax.legend(title="Survived", loc='upper center')
+
+plt.tight_layout()
+
+
+
+
+sns.barplot(x='Pclass', y='Survived', data=train_df)
+plt.ylabel("Survival Rate")
+plt.title("Survival as function of Pclass")
+plt.show()
+
+
+
+sns.barplot(x='Sex', y='Survived', hue='Pclass', data=train_df)
+plt.ylabel("Survival Rate")
+plt.title("Survival as function of Pclass and Sex")
+plt.show()
+
+
+
+sns.barplot(x='Embarked', y='Survived', data=train_df)
+plt.ylabel("Survival Rate")
+plt.title("Survival as function of Embarked Port")
+plt.show()
+
+
+sns.barplot(x='Embarked', y='Survived', hue='Pclass', data=train_df)
+plt.ylabel("Survival Rate")
+plt.title("Survival as function of Embarked Port & Class")
+plt.show()
+
+
+sns.countplot(x='Embarked', hue='Pclass', data=train_df)
+plt.title("Count of Passengers as function of Embarked Port")
+plt.show()
+
+
+sns.boxplot(x='Embarked', y='Age', data=train_df)
+plt.title("Age distribution as function of Embarked Port")
+plt.show()
+
+
+sns.boxplot(x='Embarked', y='Fare', data=train_df)
+plt.title("Fare distribution as function of Embarked Port")
+plt.show()
+
+
+fig, ax = plt.subplots(figsize=(13, 7))
+sns.violinplot(x="Pclass", y="Age", hue='Survived', data=train_df,
+               split=True, bw=0.05, palette=swarm_color, ax=ax)
+plt.title('Survivals for Age and Pclass ')
+plt.show()
+
+
+
+swarm_color = ["red", "green"]
+fig, ax = plt.subplots(figsize=(13, 7))
+sns.swarmplot(x='Pclass', y='Age', hue='Survived', split=True,
+              data=train_df, palette=swarm_color, size=7, ax=ax)
+plt.title('Survivals for Age and Pclass ')
+plt.show()
+
+
+
+
+g = sns.factorplot(x="Pclass", y="Age", hue="Survived", col="Sex", data=train_df,
+                   kind="swarm", split=True, palette=swarm_color, size=7, aspect=.9, s=7)
+
+
+
+
+y="Age", hue="Survived", col="Sex", data=train_df, kind="violin", split=True, bw=0.05, palette=swarm_color, size=7, aspect=.9, s=7)
+
+
+
