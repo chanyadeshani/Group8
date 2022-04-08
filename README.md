@@ -45,6 +45,10 @@ The above questions were then answered with well detailed python codes under the
 
 TABLE OF CONTENT 
 
+>Topics covered
+
+>Varibles in the titanic dataset
+
 >Libraries imported and their uses
 
 >Titanic dataset picked by Team 8  
@@ -61,7 +65,9 @@ TABLE OF CONTENT
 
  
 
-TOPICS COVERED 
+CONTENT
+
+Topics covered:
 
 >Python, Python Editors, Modules 
 
@@ -73,13 +79,14 @@ TOPICS COVERED
 
 >Feature engineering 
 
-Variables in the Titanic Dataset
+
+
+Variables in the Titanic Dataset:
 
 Pclass: Passenger classes based on fares paid and a possible refelction of their economic standings
 1st = Upper
 2nd = Middle
 3rd = Lower
-
 Fare =  Ticket charge per passenger
 Age = Age of each passenger of the Titanic
 Sibsp = dataset defines family relations : Siblings/Spouse
@@ -93,19 +100,19 @@ Cabin = Cabin numbers of the passengers
 
 
 
-CONTENT 
-
 Libraries imported were Pandas, NumPy, Matplotlib, Seaborn, Sklearn, Plotly. The Titanic dataset picked by Team 8: https://www.kaggle.com/c/titanic/data. Pandas library was imported because it is a high level data manipulation tool needed to understand and visualise the structure of the dataset. NumPy is a library for python which supports large arrays, so it was important in this assessment. Matplotlib was important to aid visualizations of the dataset as histograms, piecharts, scatterplots, bar plots.Seaborn library was imported as it is useful in showing individual feature details of variables important to the assessment. Sklearn/Scikit learn library was imported because it is used to model datasets as clusters and also for regression analysis, which helps to predict outcomes of the dataset.
 
-The Titanic dataset was split into test and train sets so that the latter dataset can be used to train the machine learning model. The test set is used to test the model to check the accuracy of the machine model predictions. 
+Setup tasks to ensure python codes ran include installation of conda, python version 3.9, jupyter, vscode
 
-The first step in cleaning this dataset was dropping columns which were not so important to our analysis. In the ‘Embarked’ column, missing values were replaced with the mode values using the approriate python codes.
+The Titanic dataset was split into test and train sets so that the latter dataset can be used to train the machine learning model. The test set is used to test the model to check the accuracy of the machine model predictions
+
+The first step in cleaning this dataset was dropping columns which were not so important to our analysis. In the ‘Embarked’ column, missing values were replaced with the mode values using the approriate python codes
 
 Data visualization of answers to the questions listed in the Project Description, using Seaborn library and Matplotlib library and other libraries can be seen in our submitted pdf assessment file 
 
-Some classification techniques were employed to create predictive models of the titanic dataset n the barplot showing survived versus fatalities of the titanic dataset
+Some classification techniques were employed to create predictive models of the titanic dataset like the Random forest classifier which provided at good model accuracy of 0.84 of the train dataset and Logistic regression classifier which gave a good prediction of 0.94 of the train dataset.
 
-Feature engineering was used to create Classes like Family and Person. This was to simplify our data transformation and improve the accuracy of machine models used in this assessment.
+Feature engineering was used to create Classes like Family and Person. This was to simplify our data transformation and improve the accuracy of machine models used in this assessment
 
  
 
@@ -113,7 +120,7 @@ Feature engineering was used to create Classes like Family and Person. This was 
 
 TEAM MEMBERS AND CREDITS 
 
-Team Contribution from: Bassey Henshaw, Chanya Subasingha Arachchige, Oluwatoyin Odeniyi and Zech-Enakhimion Ahmed.
+Team Contribution from: Bassey Henshaw, Chanya Subasingha Arachchige, Oluwatoyin Odeniyi and Zech-Enakhimion Ahmed
 
 
  
