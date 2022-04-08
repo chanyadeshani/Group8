@@ -103,7 +103,9 @@ The first step in cleaning this dataset was dropping columns which were not so i
 
 Data visualization of answers to the questions listed in the Project Description, using Seaborn library and Matplotlib library and other libraries can be seen in our submitted pdf assessment file 
 
-Some classification techniques were employed to create predictive models of the titanic dataset in the barplot showing survived versus fatalities of the titanic dataset
+Some classification techniques were employed to create predictive models of the titanic dataset n the barplot showing survived versus fatalities of the titanic dataset
+
+Feature engineering was used to create Classes like Family and Person. This was to simplify our data transformation and improve the accuracy of machine models used in this assessment.
 
  
 
