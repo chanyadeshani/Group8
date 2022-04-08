@@ -6,9 +6,9 @@
 ## PROJECT DESCRIPTION 
 
 
+## REQUIREMENT FOR THE CT7201 ASSESSMENT
 
-
-
+To develop a python notebook to analyse a titanic dataset using commented and correctly referenced python codes and libraries. Curating the questions below, we were able to complete this assessment in a well detailed manner:
 
 
 What was our motivation? 
@@ -29,21 +29,17 @@ What did we learn?
 
 What makes our project stand out? 
 
-     We built several machine models and we picked the one with best prediction rate of 94%. We used the same classifier models on different independent variables and compared their accuracies, to understand what variables influenced the survival rate.  
+    It is important to note that we built several machine models and we picked the machine model with best prediction rate of 94% to arrive at our conclusion. We used the same classifier models on different independent variables and compared their accuracies, to understand what variables influenced the survival rate of passengers on the Titanic.  
 
  
 
-The aim of this assessment was to answer with well detailed python codes: 
+The above questions were then answered with well detailed python codes under the following topics: 
 
->What factors determined passengers survival in the titanic ?
+>Factors determined passengers survival in the titanic 
 
->Factors that reduced the chances of survival of certain passengers ?
+>Factors that reduced the chances of survival of certain passengers 
 
- 
 
-Importing some libraries, python codes were used to answer the questions above and to visually illustrate these same answers in a clear manner. 
-
- 
 
  
 
@@ -78,35 +74,36 @@ TOPICS COVERED
 >Feature engineering 
 
 Variables in the Titanic Dataset
+
 Pclass: Passenger classes based on fares paid and a possible refelction of their economic standings
 1st = Upper
 2nd = Middle
 3rd = Lower
 
-Age of each passenger of the Titanic
-
-Sibsp =dataset defines family relations : Siblings/Spouse
+Fare =  Ticket charge per passenger
+Age = Age of each passenger of the Titanic
+Sibsp = dataset defines family relations : Siblings/Spouse
 Sibling = Sister, Brother, Step-sister, Stepbrother
 Spouse = Husband and Wife
-
-
 Parch : defines family relations
 Parent = Mother and Father
 Child = Daughter, Son, Step-daughter and Step-son
+Embarked = Ports of entry of passengers namely Queenstown(Q), Cherbourg(C), Southampton(S)
+Cabin = Cabin numbers of the passengers
+
+
 
 CONTENT 
 
-Libraries imported were Pandas, Numpy, Matplotlib, Seaborn, Sklearn, Titanic dataset picked by Team 8: https://www.kaggle.com/c/titanic/data 
+Libraries imported were Pandas, NumPy, Matplotlib, Seaborn, Sklearn, Plotly. The Titanic dataset picked by Team 8: https://www.kaggle.com/c/titanic/data. Pandas library was imported because it is a high level data manipulation tool needed to understand and visualise the structure of the dataset. NumPy is a library for python which supports large arrays, so it was important in this assessment. Matplotlib was important to aid visualizations of the dataset as histograms, piecharts, scatterplots, bar plots.Seaborn library was imported as it is useful in showing individual feature details of variables important to the assessment. Sklearn/Scikit learn library was imported because it is used to model datasets as clusters and also for regression analysis, which helps to predict outcomes of the dataset.
 
-The Titanic dataset was split into test and train sets so that the latter dataset can be used to train the machine learning model. The test set is used to test the model to check the accuracy of the predictions. 
+The Titanic dataset was split into test and train sets so that the latter dataset can be used to train the machine learning model. The test set is used to test the model to check the accuracy of the machine model predictions. 
 
 The first step in cleaning this dataset was dropping columns which were not so important to our analysis. In the ‘Embarked’ column, missing values were replaced with the mode values using the approriate python codes.
 
->Data visualization of answers to the questions listed in the Project Description, using Seaborn library and Matplotlib library and other libraries can be seen  
+Data visualization of answers to the questions listed in the Project Description, using Seaborn library and Matplotlib library and other libraries can be seen in our submitted pdf assessment file 
 
->Classification techniques employed to create predictive models of the titanic dataset in the barplot showing survived versus fatalities. Also a barplot showing how the sexes fared, which sex had the higher survival rate. 
-
- 
+Some classification techniques were employed to create predictive models of the titanic dataset in the barplot showing survived versus fatalities of the titanic dataset
 
  
 
@@ -114,7 +111,8 @@ The first step in cleaning this dataset was dropping columns which were not so i
 
 TEAM MEMBERS AND CREDITS 
 
-Team Contribution from: 
+Team Contribution from: Bassey Henshaw, Chanya Subasingha Arachchige, Oluwatoyin Odeniyi and Zech-Enakhimion Ahmed.
+
 
  
 
