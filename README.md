@@ -223,7 +223,87 @@ g = sns.factorplot(x="Pclass", y="Age", hue="Survived", col="Sex", data=train_df
 
 
 
-y="Age", hue="Survived", col="Sex", data=train_df, kind="violin", split=True, bw=0.05, palette=swarm_color, size=7, aspect=.9, s=7)
+y="Age", hue="Survived", col="Sex", data=train_df, kind="violin", split=True, bw=0.05, palette=swarm_color, size=7, aspect=.9, s=7
 
 
+
+
+## Corrections and Additions
+i forgot to drop this Age plot
+
+train_df["Age"].plot()
+
+
+sns.heatmap(correlation, annot=True) #the heat plot showing the correlation matrix
+
+
+Building a Predictive Model to predict survivor in the titanic
+
+
+#Visualizing the shape of the data
+
+
+plt.figure(figsize=(20,4))     #for plotting a figure
+for index, (image, label) in enumerate(zip(digits.data[0:5],digits.target[0:5])):#this is taking a sample of the images that we have loaded ifor training purposes
+    plt.subplot(1,5, index + 1)
+    plt.imshow(np.reshape(image, (8,8)),cmap=plt.cm.gray)
+    plt.title('Training: %i\n' %label, fontsize=20)
+    
+    
+    
+ #Splitting our data in Train data set and Test data Set, so that the  training data is use for train the model and the test data set is use to test the model
+x = train_df[["Pclass", "Sex", "Age", "SibSp", "Parch", "Fare"]]
+y = train_df["Survived"]
+
+x_train, x_test, y_train, y_test = train_test_split(digits.data, digits.target, test_size=0.2, random_state=2)
+
+
+# Formating the data to fit the predictive model
+train_df.loc[train_df['Survived'] == 0, 'Survived'] = 'Deceased'
+train_df.loc[train_df['Survived'] == 1, 'Survived'] = 'Survived'
+train_df['Survived'].head()
+
+
+train_df.loc[train_df['Pclass'] == 'First Class', 'Pclass'] = 1
+train_df.loc[train_df['Pclass'] == "Second Class", 'Pclass'] = 2
+train_df.loc[train_df['Pclass'] == 'Third Class', 'Pclass'] = 3
+train_df['Pclass'].head()
+
+
+train_df.loc[train_df['Embarked'] == 'C', 'Embarked'] = 1
+train_df.loc[train_df['Embarked'] == 'Q', 'Embarked'] = 2
+train_df.loc[train_df['Embarked'] == 'S', 'Embarked'] = 3
+
+train_df.loc[train_df['Sex'] == "male", 'Sex'] = 1
+train_df.loc[train_df['Sex'] == "female", 'Sex'] = 2
+
+
+print(x)
+
+print(x_train.shape)
+
+print(y_train.shape)
+
+print(x_test.shape)
+
+print(y_test.shape)
+
+# fitting the model for Logistic Regression analysis
+logisticRegr = LogisticRegression()
+logisticRegr.fit(x_train, y_train)
+
+predictions = logisticRegr.predict(x_test)
+print(predictions) #the predicted values
+
+
+score = logisticRegr.score(x_test, y_test)
+print(score)
+
+confusion_matrix = metrics.confusion_matrix(y_test, predictions)
+plt.figure(figsize=(9, 9))
+sns.heatmap(confusion_matrix,annot=True, fmt='.3f', linewidths=.5, square=True, cmap = 'Blues_r');
+plt.ylabel('Actual label');
+plt.xlabel('Predicted label');
+all_sample_title = 'Model Accuracy Score: {0}'.format(score)
+plt.title(all_sample_title, size = 15);
 
