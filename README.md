@@ -252,6 +252,8 @@ for index, (image, label) in enumerate(zip(digits.data[0:5],digits.target[0:5]))
     
     
  #Splitting our data in Train data set and Test data Set, so that the  training data is use for train the model and the test data set is use to test the model
+ 
+ 
 x = train_df[["Pclass", "Sex", "Age", "SibSp", "Parch", "Fare"]]
 y = train_df["Survived"]
 
@@ -292,12 +294,14 @@ print(y_test.shape)
 logisticRegr = LogisticRegression()
 logisticRegr.fit(x_train, y_train)
 
+
 predictions = logisticRegr.predict(x_test)
 print(predictions) #the predicted values
 
 
 score = logisticRegr.score(x_test, y_test)
 print(score)
+
 
 confusion_matrix = metrics.confusion_matrix(y_test, predictions)
 plt.figure(figsize=(9, 9))
