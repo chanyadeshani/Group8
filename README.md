@@ -106,13 +106,13 @@ Setup tasks to ensure python codes ran include installation of conda, python ver
 
 The Titanic dataset was split into test and train sets so that the latter dataset can be used to train the machine learning model. The test set is used to test the model to check the accuracy of the machine model predictions
 
-The first step in cleaning this dataset was dropping columns which were not so important to our analysis. In the ‘Embarked’ column, missing values were replaced with the mode values using the approriate python codes
+The first step in cleaning this dataset was dropping columns which were not so important to our analysis. For example, in the ‘Embarked’ column, missing values were replaced with the mode values using the approriate python codes
 
 Data visualization of answers to the questions listed in the Project Description, using Seaborn library and Matplotlib library and other libraries can be seen in our submitted pdf assessment file 
 
 Some classification techniques were employed to create predictive models of the titanic dataset like the Random forest classifier which provided at good model accuracy of 0.84 of the train dataset and Logistic regression classifier which gave a good prediction of 0.94 of the train dataset.
 
-Feature engineering was used to create Classes like Family and Person. This was to simplify our data transformation and improve the accuracy of machine models used in this assessment
+Feature engineering was used to create Classes like 'Family' and 'Person'. This was to simplify our data transformation and improve the accuracy of machine models used in this assessment
 
  
 
