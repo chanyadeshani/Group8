@@ -139,7 +139,7 @@ Data visualization of answers to the questions listed in the Project Description
 
 Some classification techniques were employed to create predictive models of the titanic dataset like the Random forest classifier which provided at good model accuracy of 0.84 of the train dataset and Logistic regression classifier which gave a good prediction of 0.94 of the train dataset.
 
-Feature engineering was used to create Classes like 'Family' and 'Person'. For example, 'Person' Class was used to store values of pasengers traveling with family.This helped to simplify our data transformation and improve the accuracy of machine models used in this assessment. 'Family' Class was useful to calculate the percentage of adult males and females who survived. Dictionaries like 'family_dict' was created to store values of family members and 'family_group_dict' was used to show the number of families in the titanic, which was 170
+Feature engineering was used to create Classes like 'Family' and 'Person'. For example, 'Person' Class was used to store values of passengers traveling with family.This helped to simplify our data transformation and improve the accuracy of machine models used in this assessment. 'Family' Class was useful to calculate the percentage of adult males and females who survived. Dictionaries like 'family_dict' was created to store values of family members and 'family_group_dict' was used to show the number of families in the titanic, which was 170
 
  
 
