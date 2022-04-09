@@ -116,14 +116,19 @@ Libraries imported were Pandas, NumPy, Matplotlib, Seaborn, Sklearn, Plotly
 6. Plotly is important in plotting different charts to make visualization of data simpler and also good for customization of graphs
 
 
-Different Python functions were used to explore the data and some after they were run had future warnings. Using a different python function in such instances produced the same results but no warnings as seen when the swarmplot function(from the seaborn package) was replaced with the stripplot function to show 'Survivals for Age and Pclass'. This specifically illustrates how two different python functions can be used to manipulate the same set of variables and still get the same output(visualization). Some python functions were found to print output faster than some did, even though the outputs were the same. This knowledge would help in time-sensitive data analysis work
+Different Python functions were used to explore the data and some after they were run had future warnings. Using a different python function in such instances produced the same results but no warnings as seen when the swarmplot function(from the seaborn package) was replaced with the stripplot function to show 'Survivals for Age and Pclass'. Also seen when 'Variance of fare calculated using the define function' gave the same output as 'Variance of fare calculated using numpy function'. This specifically illustrates how two different python functions can be used to manipulate the same set of variables and still give the same output(or visualization). Some python functions were found to print output faster than some did, even though the outputs were the same. This knowledge would help in time-sensitive data analysis work
 
 Setup tasks to ensure python codes ran include installation of conda, python version 3.9, jupyter, Visual code. All the conda environments were installed before the pip function was called in Anaconda prompt. This includes the following codes:
-conda env list
-conda install Python pip
-conda install python = 3.9
-conda install jupyter
-conda install numpy
+
+1.conda env list
+
+2.conda install Python pip
+
+3.conda install Python = 3.9
+
+4.conda install jupyter
+
+5.conda install numpy
 
 
 The Titanic dataset was split into test and train sets so that the latter dataset can be used to train the machine learning model. The test set is used to test the model to check the accuracy of the machine model predictions
@@ -134,7 +139,7 @@ Data visualization of answers to the questions listed in the Project Description
 
 Some classification techniques were employed to create predictive models of the titanic dataset like the Random forest classifier which provided at good model accuracy of 0.84 of the train dataset and Logistic regression classifier which gave a good prediction of 0.94 of the train dataset.
 
-Feature engineering was used to create Classes like 'Family' and 'Person'. This was to simplify our data transformation and improve the accuracy of machine models used in this assessment
+Feature engineering was used to create Classes like 'Family' and 'Person'. For example, 'Person' Class was used to store values of pasengers traveling with family.This helped to simplify our data transformation and improve the accuracy of machine models used in this assessment. 'Family' Class was useful to calculate the percentage of adult males and females who survived. Dictionaries like 'family_dict' was created to store values of family members and 'family_group_dict' was used to show the number of families in the titanic, which was 170
 
  
 
