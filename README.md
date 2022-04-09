@@ -103,10 +103,15 @@ Cabin = Cabin numbers of the passengers
 
 Libraries imported were Pandas, NumPy, Matplotlib, Seaborn, Sklearn, Plotly
 1.Pandas library was imported because it is a high level data manipulation tool needed to understand and visualise the structure of the dataset 
+
 2.NumPy is a library for python which supports large arrays, so it was important in this assessment
+
 3.Matplotlib was important to aid visualizations of the dataset as histograms, piecharts, scatterplots, bar plots
+
 4.Seaborn library was imported as it is useful in showing individual feature details of variables important to the assessment
+
 5.Sklearn/Scikit learn library was imported because it is used to model datasets as clusters and also for regression analysis, which helps to predict outcomes of the dataset
+
 Different Python functions were used to explore the data and some after they were run had future warnings. Using a different python function in such instances produced the same results but no warnings as seen when the swarmplot function(from the seaborn package) was replaced with the stripplot function to show 'Survivals for Age and Pclass'. This specifically illustrates how two different python functions can be used to manipulate the same set of variables and still get the same output(visualization). Some python functions were found to print output faster than some did, even though the outputs were the same. This knowledge would help in time-sensitive data analysis work
 
 Setup tasks to ensure python codes ran include installation of conda, python version 3.9, jupyter, Visual code. All the conda environments were installed before the pip function was called in Anaconda prompt. This includes the following codes:
@@ -114,6 +119,7 @@ conda env list
 conda install Python pip
 conda install python = 3.9
 conda install jupyter
+conda install numpy
 
 
 The Titanic dataset was split into test and train sets so that the latter dataset can be used to train the machine learning model. The test set is used to test the model to check the accuracy of the machine model predictions
