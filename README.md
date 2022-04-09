@@ -29,7 +29,7 @@ What did we learn?
 
 What makes our project stand out? 
 
-    It is important to note that we built several machine models and we picked the machine model with best prediction rate of 94% to arrive at our conclusion. We used the same classifier models on different independent variables and compared their accuracies, to understand what variables influenced the survival rate of passengers on the Titanic.  
+    It is important to note the use of python libraries and functions to analyse the dataset. Several machine models were employed and the machine model with best prediction rate was about 70% to arrive at a good conclusion of prediction. The same classifier models were used with different independent variables and accuracies were compared to better understand what variables influenced the survival rate of passengers on the Titanic.  
 
  
 
@@ -49,7 +49,7 @@ TABLE OF CONTENT
 
 >Varibles in the titanic dataset
 
->Libraries imported and their uses
+>Python Libraries imported and their uses
 
 >Titanic dataset picked by Team 8  
 
@@ -100,9 +100,10 @@ Cabin = Cabin numbers of the passengers
 
 
 
-Libraries imported were Pandas, NumPy, Matplotlib, Seaborn, Sklearn, Plotly. The Titanic dataset picked by Team 8: https://www.kaggle.com/c/titanic/data. Pandas library was imported because it is a high level data manipulation tool needed to understand and visualise the structure of the dataset. NumPy is a library for python which supports large arrays, so it was important in this assessment. Matplotlib was important to aid visualizations of the dataset as histograms, piecharts, scatterplots, bar plots.Seaborn library was imported as it is useful in showing individual feature details of variables important to the assessment. Sklearn/Scikit learn library was imported because it is used to model datasets as clusters and also for regression analysis, which helps to predict outcomes of the dataset.
+Libraries imported were Pandas, NumPy, Matplotlib, Seaborn, Sklearn, Plotly. The Titanic dataset picked by Team 8: https://www.kaggle.com/c/titanic/data. Pandas library was imported because it is a high level data manipulation tool needed to understand and visualise the structure of the dataset. NumPy is a library for python which supports large arrays, so it was important in this assessment. Matplotlib was important to aid visualizations of the dataset as histograms, piecharts, scatterplots, bar plots.Seaborn library was imported as it is useful in showing individual feature details of variables important to the assessment. Sklearn/Scikit learn library was imported because it is used to model datasets as clusters and also for regression analysis, which helps to predict outcomes of the dataset. Different Python functions were used to explore the data and some after they were run had future warnings. Using a different python function in such instances produced the same results but no warnings as seen when the swarmplot function(from the seaborn package) was replaced with the stripplot function to show 'Survivals for Age and Pclass'. This specifically illustrates how two different python functions can be used to manipulate the same set of variables and still get the same output(visualization). Some python functions were found to print output faster than some did, even though the outputs were the same. This knowledge would help in time-sensitive data analysis work
 
-Setup tasks to ensure python codes ran include installation of conda, python version 3.9, jupyter, vscode
+Setup tasks to ensure python codes ran include installation of conda, python version 3.9, jupyter, vscode. All the conda environments were installed before the pip function was called in Anaconda prompt
+
 
 The Titanic dataset was split into test and train sets so that the latter dataset can be used to train the machine learning model. The test set is used to test the model to check the accuracy of the machine model predictions
 
@@ -120,7 +121,7 @@ Feature engineering was used to create Classes like 'Family' and 'Person'. This 
 
 TEAM MEMBERS AND CREDITS 
 
-Team Contribution from: Bassey Henshaw, Chanya Subasingha Arachchige, Oluwatoyin Odeniyi and Zech-Enakhimion Ahmed
+100% Team Contribution from: Bassey Henshaw, Chanya Subasingha Arachchige, Oluwatoyin Odeniyi and Zech-Enakhimion Ahmed
 
 
  
