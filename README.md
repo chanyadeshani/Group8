@@ -147,7 +147,7 @@ Feature engineering was used to create Classes like 'Family' and 'Person'. For e
 
 TEAM MEMBERS AND CREDITS 
 
-Team Contribution from: Bassey Henshaw, Chanya Subasingha Arachchige, Oluwatoyin Odeniyi and Zech-Enakhimion Ahmed
+Team Contribution from: Bassey Henshaw, Chanya Subasingha Arachchige, Zech-Enakhimion Ahmed and Oluwatoyin Odeniyi 
 
 
  
