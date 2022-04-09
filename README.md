@@ -102,6 +102,7 @@ Cabin = Cabin numbers of the passengers
 
 
 Libraries imported were Pandas, NumPy, Matplotlib, Seaborn, Sklearn, Plotly
+
 1.Pandas library was imported because it is a high level data manipulation tool needed to understand and visualise the structure of the dataset 
 
 2.NumPy is a library for python which supports large arrays, so it was important in this assessment
@@ -111,6 +112,9 @@ Libraries imported were Pandas, NumPy, Matplotlib, Seaborn, Sklearn, Plotly
 4.Seaborn library was imported as it is useful in showing individual feature details of variables important to the assessment
 
 5.Sklearn/Scikit learn library was imported because it is used to model datasets as clusters and also for regression analysis, which helps to predict outcomes of the dataset
+
+6. Plotly is important in plotting different charts to make visualization of data simpler and also good for customization of graphs
+
 
 Different Python functions were used to explore the data and some after they were run had future warnings. Using a different python function in such instances produced the same results but no warnings as seen when the swarmplot function(from the seaborn package) was replaced with the stripplot function to show 'Survivals for Age and Pclass'. This specifically illustrates how two different python functions can be used to manipulate the same set of variables and still get the same output(visualization). Some python functions were found to print output faster than some did, even though the outputs were the same. This knowledge would help in time-sensitive data analysis work
 
@@ -138,7 +142,7 @@ Feature engineering was used to create Classes like 'Family' and 'Person'. This 
 
 TEAM MEMBERS AND CREDITS 
 
-100% Team Contribution from: Bassey Henshaw, Chanya Subasingha Arachchige, Oluwatoyin Odeniyi and Zech-Enakhimion Ahmed
+Team Contribution from: Bassey Henshaw, Chanya Subasingha Arachchige, Oluwatoyin Odeniyi and Zech-Enakhimion Ahmed
 
 
  
