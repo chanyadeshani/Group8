@@ -113,7 +113,7 @@ Libraries imported were Pandas, NumPy, Matplotlib, Seaborn, Sklearn, Plotly
 
 5.Sklearn/Scikit learn library was imported because it is used to model datasets as clusters and also for regression analysis, which helps to predict outcomes of the dataset
 
-6. Plotly is important in plotting different charts to make visualization of data simpler and also good for customization of graphs
+6.Plotly is important in plotting different charts to make visualization of data simpler and also good for customization of graphs
 
 
 Different Python functions were used to explore the data and some after they were run had future warnings. Using a different python function in such instances produced the same results but no warnings as seen when the swarmplot function(from the seaborn package) was replaced with the stripplot function to show 'Survivals for Age and Pclass'. Also seen when 'Variance of fare calculated using the define function' gave the same output as 'Variance of fare calculated using numpy function'. This specifically illustrates how two different python functions can be used to manipulate the same set of variables and still give the same output(or visualization). Some python functions were found to print output faster than some did, even though the outputs were the same. This knowledge would help in time-sensitive data analysis work
