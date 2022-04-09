@@ -6,7 +6,7 @@
 ## PROJECT DESCRIPTION 
 
 
-## REQUIREMENT FOR THE CT7201 ASSESSMENT
+## REQUIREMENT FOR THE CT7201 ASSESSMENT(Data Science Masters Class(set 2022/2023)
 
 To develop a python notebook to analyse a titanic dataset using commented and correctly referenced python codes and libraries. Curating the questions below, we were able to complete this assessment in a well detailed manner:
 
