@@ -98,7 +98,7 @@ Teen = person between age 10 and 18 years
 Embarked = Ports of entry of passengers namely Queenstown(Q), Cherbourg(C), Southampton(S)
 Cabin = Cabin numbers of the passengers
 
-
+Understanding the Titanic disaster and specifically what variables might affect the outcome of survival is important. Women and children are given preference for lifeboats. Class of the pasengers, Age, Sex may be good predictors of survival. We’ll start by exploring Sex and Pclass by visualizing the data.  The Survived column contains values of 0 if the passenger did not survive and 1 if they did, we can segment our data by sex and calculate the mean of this column. 
 
 Libraries imported were Pandas, NumPy, Math, Matplotlib, Seaborn, Sklearn, Collections
 
