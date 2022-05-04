@@ -121,15 +121,15 @@ Different Python functions were used to explore the data and some after they wer
 
 Setup tasks to ensure python codes ran include installation of conda, python version 3.9, jupyter, Visual code. All the conda environments were installed before the pip function was called in Anaconda prompt. This includes the following codes:
 
-1.conda env list
+1. conda env list
 
-2.conda install Python pip
+2. conda install Python pip
 
-3.conda install Python = 3.9
+3. conda install Python = 3.9
 
-4.conda install jupyter
+4. conda install jupyter
 
-5.conda install numpy
+5. conda install numpy
 
 
 The Titanic dataset was split into test and train sets so that the latter dataset can be used to train the machine learning model. The test set is used to test the model to check the accuracy of the machine model predictions
