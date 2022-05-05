@@ -145,8 +145,9 @@ Feature engineering was used to summarize data. This helped to simplify our data
 Classes 'Family' and 'Person' was created to summarize data about people traveled as family. For example, 'Person' Class was used to store values of passengers traveling with family.  'Family' Class was useful to calculate the percentage of adult males and females who survived. Dictionaries like 'family_dict' was created to store values of family members and 'family_group_dict' was used to show the number of families in the titanic, which was 170
 
  
-
- 
+Reference:
+- Grus, J. (2019) Data science from scratch : first principles with python. Second edn. Sebastopol, CA: O'Reilly Media. Available at: INSERT-MISSING-URL (Accessed: May 5, 2022).
+ - Sweigart, A. (2015) Automate the Boring Stuff with Python: Practical Programming for Total Beginners, CA: No Starch Press
 
 TEAM MEMBERS AND CREDITS 
 
