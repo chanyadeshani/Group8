@@ -148,7 +148,7 @@ Classes 'Family' and 'Person' was created to summarize data about people travele
 Reference:
 - Grus, J. (2019) Data science from scratch : first principles with python. Second edn. Sebastopol, CA: O'Reilly Media. Available at: INSERT-MISSING-URL (Accessed: May 5, 2022).
  - Sweigart, A. (2015) Automate the Boring Stuff with Python: Practical Programming for Total Beginners, CA: No Starch Press
- - https://pandas.pydata.org/pandas-docs/stable/development/
+ - https://pandas.pydata.org/pandas-docs/stable/index.html
 
 TEAM MEMBERS AND CREDITS 
 
