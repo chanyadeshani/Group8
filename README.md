@@ -103,12 +103,19 @@ Understanding the Titanic disaster and specifically what variables might affect 
 Libraries imported were Pandas, NumPy, Math, Matplotlib, Seaborn, Sklearn, Collections
 
 1. Pandas library was imported because it is a high level data manipulation tool needed to understand and visualise the structure of the dataset 
+
 2. NumPy is a library for python which supports large arrays, so it was important in this assessment
+
 3. Matplotlib was important to aid visualizations of the dataset as histograms, piecharts, scatterplots, bar plots
+
 4. Seaborn library was imported as it is useful in showing individual feature details of variables important to the assessment
+
 5. Several functions was Sklearn(Scikit learn) library was imported because it is used to model datasets as clusters and also for regression analysis, which helps to predict outcomes of the dataset
+
 6. Isnan function is imported from Math module to check for missing values
+
 7. Counter function is imported from Collections module to count the items in an iterable list
+
 8. HTTPError is imported to handle if any occures when connecting to Github to get the data files.
 
 
