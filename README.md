@@ -119,7 +119,11 @@ Libraries imported were Pandas, NumPy, Math, Matplotlib, Seaborn, Sklearn, Colle
 8. HTTPError is imported to handle if any occures when connecting to Github to get the data files.
 
 
-Different Python functions were used to explore the data and some after they were run had future warnings. Using a different python function in such instances produced the same results but no warnings as seen when the swarmplot function(from the seaborn package) was replaced with the stripplot function to show 'Survivals for Age and Pclass'. Also seen when 'Variance of fare calculated using the define function' gave the same output as 'Variance of fare calculated using numpy function'. This specifically illustrates how two different python functions can be used to manipulate the same set of variables and still give the same output(or visualization). Some python functions were found to print output faster than some did, even though the outputs were the same. This knowledge would help in time-sensitive data analysis work
+Different Python functions were used to explore the data and some after they were run had future warnings. Using a different python function in such instances produced the same results but no warnings as seen when the swarmplot function(from the seaborn package) was replaced with the stripplot function to show 'Survivals for Age and Pclass'. 
+
+A Python code was formulated to store each person in the data set and itertuples() function in python was used in the code for better performance.
+
+Also seen when 'Variance of fare calculated using the define function' gave the same output as 'Variance of fare calculated using numpy function'. This specifically illustrates how two different python functions can be used to manipulate the same set of variables and still give the same output(or visualization). Some python functions were found to print output faster than some did, even though the outputs were the same. This knowledge would help in time-sensitive data analysis work
 
 Setup tasks to ensure python codes ran include installation of conda, python version 3.9, jupyter, Visual code. All the conda environments were installed before the pip function was called in Anaconda prompt. This includes the following codes:
 
