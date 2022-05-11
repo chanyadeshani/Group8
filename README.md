@@ -1,313 +1,177 @@
-# Group8
-Group assignment for CT7201 Python Notebooks and Scripting (SEM2 - 2021/22)
 
-###Importing the important libraries needed for Data Manipulation, classification and Analysis
+# Python Data Manipulation on a Titanic dataset  
 
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-%matplotlib inline
-import seaborn as sns
-from sklearn.datasets import load_digits
-digits = load_digits()
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn import metrics
-
-
-from sklearn.impute import SimpleImputer
-
-
-
-print("\tData description")
-print("*****************************************")
-print("""•\tPassengerId: Id of every passenger.\n•\tSurvived: This feature have value 0 and 1. 0 for not survived and 1 for survived.\n•\tPclass: There are 3 classes: Class 1, Class 2 and Class 3.\n•\tName: Name of passenger.\n•\tSex: Gender of passenger.\n•\tAge: Age of passenger.\n•\tSibSp: Indication that passenger have siblings and spouse.\n•\tParch: Whether a passenger is alone or have family.\n•\tTicket: Ticket number of passenger.\n•\tFare: Indicating the fare.\n•\tCabin: The cabin of passenger.\n•\tEmbarked: The embarked category""")
-
-
-data_file = "train.csv"
-train_df = pd.read_csv(data_file)
-train_df.head(10)
-train_df.dtypes
-train_df.shape
-
-
-
-train_df.head(n=6)
-
-
-
-### Transforming the survived column from integer to object
-
-train_df.loc[train_df['Survived'] == 0, 'Survived'] = 'Deceased'
-train_df.loc[train_df['Survived'] == 1, 'Survived'] = 'Survived'
-train_df['Survived'].head()
-
-
-train_df.loc[train_df['Pclass'] == 1, 'Pclass'] = 'First Class'
-train_df.loc[train_df['Pclass'] == 2, 'Pclass'] = 'Second Class'
-train_df.loc[train_df['Pclass'] == 3, 'Pclass'] = 'Third Class'
-train_df['Pclass'].head()
-
-
-train_df.loc[train_df['Embarked'] == 'C', 'Embarked'] = 'Cherbourg'
-train_df.loc[train_df['Embarked'] == 'Q', 'Embarked'] = 'Queenstown'
-train_df.loc[train_df['Embarked'] == 'S', 'Embarked'] = 'Southampton'
-
-
-train_df.head()
-
-
-
-###The average age of passengers?
-train_df["Age"].mean()
-
-
-### Median Age and Ticket fare price of Pax
-train_df[["Age", "Fare"]].median()
-
-
-train_df.describe(include="all")
-
-
-###instead of using the predifined "describe function" we can combined aggregating statistics
-train_df.agg(
-{
-    "Age": ['min', 'max', 'mean', 'median', 'skew'],
-    "Fare": ['min', 'max', 'mean', 'median', 'skew'],
-}
-)
-
-
-### counting by group
-train_df.groupby("Pclass")["Pclass"].count()
-
-
-
-
-
-train_df.isnull()  ### is any missing values in dataframe
-
-
-train_df.isnull().any()  ### is any missing values across columns
-
-
-
-train_df.isnull().sum().sum()   ###count of missing values of the entire dataframe
-
-
-count_NAN = len(train_df) - train_df.count() ###count of missing values across columns
-count_NAN
-
-for i in range(len(train_df.index)):  ### count of missing values across rows
-    print("NAN in row ", i , " : ", train_df.iloc[i].isnull().sum())
-
-
-###counting of missing values of a particular column
-train_df.Age.isnull().sum()
-
-
-### count of missing values of column by group
-'''count of missing values of column by group
- Because we dont havve missing values in sex all the missing values is coming from Age'''
  
-train_df.groupby(['Sex'])['Survived'].apply(lambda x: x.isnull().sum())
 
-# Replacing the na in age column with mean
-train_df["Age"] = train_df["Age"].fillna(train_df["Age"].mean())
-train_df["Age"].head()
-#checking if there are any remaining missing value
-train_df.Age.isnull().sum()
+## PROJECT DESCRIPTION 
 
 
-# % of rows missing in each column
+## REQUIREMENT FOR THE CT7201 ASSESSMENT(Data Science Masters Class Set 2022/2023)
 
-for column in train_df.columns:
-    percentage = train_df[column].isnull().mean()
-    print(f'{column}: {round(percentage*100,4)}%')
-
-#####New Additions 
-
-###insert this plot at the begining of the data when we still had missing values, this is a graphical presentation of the variable where there is missing data in the data set
-
-plt.subplots(figsize=(10,6)) #the figsize help zoom our plot to give a better visible view
-sns.heatmap(train_df.isnull(), cbar=False, cmap="YlGnBu_r")
-plt.show()
+To develop a python notebook to analyse a titanic dataset using commented and correctly referenced python codes and libraries. Curating the questions below, we were able to complete this assessment in a well detailed manner:
 
 
+What was our motivation? 
 
+       To learn how to analyse data with python codes and libraries  
 
-categorical_variable = ['Survived', 'Sex', 'Pclass', 'SibSp', 'Parch', 'Embarked']
+Why did we build this project? 
 
-'Our desired number of plot row and column size'
-categorical_plot_nrows = 2
-categorical_plot_ncols = 3
+       To predict the survival rate of passengers of the titanic 
 
-fig, axs = plt.subplots(categorical_plot_nrows, categorical_plot_ncols, figsize=(categorical_plot_ncols*3.5, categorical_plot_nrows*3))
+What problem did we solve? 
 
-for r in range(0, categorical_plot_nrows):
-    for c in range(0, categorical_plot_ncols):
-        
-        i = r*categorical_plot_ncols+c
-        ax = axs[r][c]
-        sns.countplot(train_df[categorical_variable[i]], hue=train_df["Survived"], ax=ax)
-        ax.set_title(categorical_variable[i], fontsize=12, fontweight="bold")
-        ax.legend(title="Survived", loc='upper center')
+        By using some regression and classification models we were able to predict the survival rate with a 85% success rate 
 
-plt.tight_layout()
+What did we learn? 
 
+       We learnt that certain factors influenced the survival of the passengers in the titanic like family size, gender, age, class and fare 
 
+What makes our project stand out? 
 
+    It is important to note the use of python libraries and functions to analyse the dataset. Several models were employed and the machine learning model with best prediction rate was about 85% to arrive at a good conclusion of prediction. The same classifier models were used with different independent variables and accuracies were compared to better understand what variables influenced the survival rate of passengers on the Titanic.  
 
-sns.barplot(x='Pclass', y='Survived', data=train_df)
-plt.ylabel("Survival Rate")
-plt.title("Survival as function of Pclass")
-plt.show()
-
-
-
-sns.barplot(x='Sex', y='Survived', hue='Pclass', data=train_df)
-plt.ylabel("Survival Rate")
-plt.title("Survival as function of Pclass and Sex")
-plt.show()
-
-
-
-sns.barplot(x='Embarked', y='Survived', data=train_df)
-plt.ylabel("Survival Rate")
-plt.title("Survival as function of Embarked Port")
-plt.show()
-
-
-sns.barplot(x='Embarked', y='Survived', hue='Pclass', data=train_df)
-plt.ylabel("Survival Rate")
-plt.title("Survival as function of Embarked Port & Class")
-plt.show()
-
-
-sns.countplot(x='Embarked', hue='Pclass', data=train_df)
-plt.title("Count of Passengers as function of Embarked Port")
-plt.show()
-
-
-sns.boxplot(x='Embarked', y='Age', data=train_df)
-plt.title("Age distribution as function of Embarked Port")
-plt.show()
-
-
-sns.boxplot(x='Embarked', y='Fare', data=train_df)
-plt.title("Fare distribution as function of Embarked Port")
-plt.show()
-
-
-fig, ax = plt.subplots(figsize=(13, 7))
-sns.violinplot(x="Pclass", y="Age", hue='Survived', data=train_df,
-               split=True, bw=0.05, palette=swarm_color, ax=ax)
-plt.title('Survivals for Age and Pclass ')
-plt.show()
-
-
-
-swarm_color = ["red", "green"]
-fig, ax = plt.subplots(figsize=(13, 7))
-sns.swarmplot(x='Pclass', y='Age', hue='Survived', split=True,
-              data=train_df, palette=swarm_color, size=7, ax=ax)
-plt.title('Survivals for Age and Pclass ')
-plt.show()
-
-
-
-
-g = sns.factorplot(x="Pclass", y="Age", hue="Survived", col="Sex", data=train_df,
-                   kind="swarm", split=True, palette=swarm_color, size=7, aspect=.9, s=7)
-
-
-
-
-y="Age", hue="Survived", col="Sex", data=train_df, kind="violin", split=True, bw=0.05, palette=swarm_color, size=7, aspect=.9, s=7
-
-
-
-
-## Corrections and Additions
-i forgot to drop this Age plot
-
-train_df["Age"].plot()
-
-
-sns.heatmap(correlation, annot=True) #the heat plot showing the correlation matrix
-
-
-Building a Predictive Model to predict survivor in the titanic
-
-
-#Visualizing the shape of the data
-
-
-plt.figure(figsize=(20,4))     #for plotting a figure
-for index, (image, label) in enumerate(zip(digits.data[0:5],digits.target[0:5])):#this is taking a sample of the images that we have loaded ifor training purposes
-    plt.subplot(1,5, index + 1)
-    plt.imshow(np.reshape(image, (8,8)),cmap=plt.cm.gray)
-    plt.title('Training: %i\n' %label, fontsize=20)
-    
-    
-    
- #Splitting our data in Train data set and Test data Set, so that the  training data is use for train the model and the test data set is use to test the model
  
+
+The above questions were then answered with well detailed python codes under the following topics: 
+
+>Factors determined passengers survival in the titanic 
+
+>Factors that reduced the chances of survival of certain passengers 
+
+
+
  
-x = train_df[["Pclass", "Sex", "Age", "SibSp", "Parch", "Fare"]]
-y = train_df["Survived"]
 
-x_train, x_test, y_train, y_test = train_test_split(digits.data, digits.target, test_size=0.2, random_state=2)
+TABLE OF CONTENT 
 
+>Topics covered
 
-# Formating the data to fit the predictive model
-train_df.loc[train_df['Survived'] == 0, 'Survived'] = 'Deceased'
-train_df.loc[train_df['Survived'] == 1, 'Survived'] = 'Survived'
-train_df['Survived'].head()
+>Titanic dataset picked by Team 8 
 
+>Description of variables in the titanic dataset
 
-train_df.loc[train_df['Pclass'] == 'First Class', 'Pclass'] = 1
-train_df.loc[train_df['Pclass'] == "Second Class", 'Pclass'] = 2
-train_df.loc[train_df['Pclass'] == 'Third Class', 'Pclass'] = 3
-train_df['Pclass'].head()
+>Python Libraries imported and their uses
 
+>Set up tasks taken to get our codes to run
 
-train_df.loc[train_df['Embarked'] == 'C', 'Embarked'] = 1
-train_df.loc[train_df['Embarked'] == 'Q', 'Embarked'] = 2
-train_df.loc[train_df['Embarked'] == 'S', 'Embarked'] = 3
+>Splitting of the Titanic dataset into test and train sets 
 
-train_df.loc[train_df['Sex'] == "male", 'Sex'] = 1
-train_df.loc[train_df['Sex'] == "female", 'Sex'] = 2
+>Cleaning the dataset to remove any data not needed and correct any possible misspellings
 
+>Data visualization of answers to the questions listed in the Project Description, using Seaborn library and Matplotlib library and other libraries 
 
-print(x)
+>Classification techniques employed to create predictive models of the titanic dataset 
 
-print(x_train.shape)
+ 
 
-print(y_train.shape)
+CONTENT
 
-print(x_test.shape)
+Topics covered:
 
-print(y_test.shape)
+>Python, Python Editors, Modules 
 
-# fitting the model for Logistic Regression analysis
-logisticRegr = LogisticRegression()
-logisticRegr.fit(x_train, y_train)
+>Object oriented coding 
+
+>Cleaning and manipulation of the dataset
+
+>Data analysis 
+
+>Feature engineering 
 
 
-predictions = logisticRegr.predict(x_test)
-print(predictions) #the predicted values
+The Titanic dataset picked by Team 8: https://www.kaggle.com/c/titanic/data
+
+Description of variables in the Titanic Dataset:
+
+Pclass: Passenger classes based on fares paid and a possible refelction of their economic standings
+1st = Upper
+2nd = Middle
+3rd = Lower
+Fare =  Ticket charge per passenger
+Age = Age of each passenger of the Titanic
+Sibsp = dataset defines family relations : Siblings/Spouse
+Sibling = Sister, Brother, Step-sister, Stepbrother
+Parch : defines family relations
+Child = person under 10
+Teen = person between age 10 and 18 years
+Embarked = Ports of entry of passengers namely Queenstown(Q), Cherbourg(C), Southampton(S)
+Cabin = Cabin numbers of the passengers
+
+Understanding the Titanic disaster and specifically what variables might affect the outcome of survival is important. Women and children are given preference for lifeboats. Class of the pasengers, Age, Sex may be good predictors of survival. We’ll start by exploring Sex and Pclass by visualizing the data.  The Survived column contains values of 0 if the passenger did not survive and 1 if they did, we can segment our data by sex and calculate the mean of this column. 
+
+Libraries imported were Pandas, NumPy, Math, Matplotlib, Seaborn, Sklearn, Collections
+
+1. Pandas library was imported because it is a high level data manipulation tool needed to understand and visualise the structure of the dataset 
+
+2. NumPy is a library for python which supports large arrays, so it was important in this assessment
+
+3. Matplotlib was important to aid visualizations of the dataset as histograms, piecharts, scatterplots, bar plots
+
+4. Seaborn library was imported as it is useful in showing individual feature details of variables important to the assessment
+
+5. Several functions was Sklearn(Scikit learn) library was imported because it is used to model datasets as clusters and also for regression analysis, which helps to predict outcomes of the dataset
+
+6. Isnan function is imported from Math module to check for missing values
+
+7. Counter function is imported from Collections module to count the items in an iterable list
+
+8. HTTPError is imported to handle if any occures when connecting to Github to get the data files.
 
 
-score = logisticRegr.score(x_test, y_test)
-print(score)
+Different Python functions were used to explore the data and some after they were run had future warnings. Using a different python function in such instances produced the same results but no warnings as seen when the swarmplot function(from the seaborn package) was replaced with the stripplot function to show 'Survivals for Age and Pclass'. 
+
+A Python code was formulated to store each person in the data set and itertuples() function in python was used in the code for better performance.
+
+Also seen when 'Variance of fare calculated using the define function' gave the same output as 'Variance of fare calculated using numpy function'. This specifically illustrates how two different python functions can be used to manipulate the same set of variables and still give the same output(or visualization). Some python functions were found to print output faster than some did, even though the outputs were the same. This knowledge would help in time-sensitive data analysis work
+
+Setup tasks to ensure python codes ran include installation of conda, python version 3.9, jupyter, Visual code. All the conda environments were installed before the pip function was called in Anaconda prompt. This includes the following codes:
+
+1. conda create -n "Titanic"
+2. conda activate Titanic
+3. conda install Python pip
+4. conda install Python = 3.9
+5. conda install jupyter
+6. conda install numpy
+7. conda install pandas
+8. conda install math
+9. conda install collections
+10. conda install matplotlib
+12. conda install seaborn
+13. conda install urllib
+14. pip install sklearn
 
 
-confusion_matrix = metrics.confusion_matrix(y_test, predictions)
-plt.figure(figsize=(9, 9))
-sns.heatmap(confusion_matrix,annot=True, fmt='.3f', linewidths=.5, square=True, cmap = 'Blues_r');
-plt.ylabel('Actual label');
-plt.xlabel('Predicted label');
-all_sample_title = 'Model Accuracy Score: {0}'.format(score)
-plt.title(all_sample_title, size = 15);
+The first step in cleaning this dataset was understanding and fixing missing values. For example, in the ‘Embarked’ column, missing values were replaced with mode values using the approriate python codes. 
 
+Data visualization of answers to the questions listed in the Project Description, using Seaborn library and Matplotlib library and other libraries can be seen in our submitted pdf assessment file
+
+Feature engineering was used to summarize data. This helped to simplify our data transformation and improve the accuracy of machine models used in this assessment. 
+
+The Titanic dataset was split into test and train sets so that the latter dataset can be used to train the machine learning model. The test set is used to test the model to check the accuracy of the machine model predictions
+
+Some classification techniques were employed to create predictive models of the titanic dataset like the Random forest classifier which provided at good model accuracy of 0.86 of the train dataset and Logistic regression classifier which gave a good prediction of 0.85 of the train dataset.
+
+Classes 'Family' and 'Person' was created to summarize data about people traveled as family. For example, 'Person' Class was used to store values of passengers traveling with family.  'Family' Class was useful to calculate the percentage of adult males and females who survived. Dictionaries like 'family_dict' was created to store values of family members and 'family_group_dict' was used to show the number of families in the titanic, which was 170
+
+ 
+Reference:
+- Grus, J. (2019) Data science from scratch : first principles with python. Second edn. Sebastopol, CA: O'Reilly Media. Available at: INSERT-MISSING-URL (Accessed: May 5, 2022).
+ - Sweigart, A. (2015) Automate the Boring Stuff with Python: Practical Programming for Total Beginners, CA: No Starch Press
+ - https://pandas.pydata.org/pandas-docs/stable/user_guide/index.html#user-guide
+ - https://www.datasciencemadesimple.com/pie-chart-in-python-with-legends/
+ - https://data-flair.training/blogs/train-test-set-in-python-ml/
+
+TEAM MEMBERS AND CREDITS 
+
+Team Contribution from: Bassey Henshaw, Chanya Subasingha Arachchige, Zech-Enakhimion Ahmed and Oluwatoyin Odeniyi 
+
+Github Link: https://github.com/chanyadeshani/Group8
+
+
+
+ 
+
+ 
+
+ 
