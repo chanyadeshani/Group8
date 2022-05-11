@@ -136,9 +136,9 @@ Setup tasks to ensure python codes ran include installation of conda, python ver
 7. conda install pandas
 8. conda install math
 9. conda install collections
-10. conda install sklearn
-11. conda install matplotlib
+10. conda install matplotlib
 12. conda install seaborn
+13. pip install sklearn
 
 
 The Titanic dataset was split into test and train sets so that the latter dataset can be used to train the machine learning model. The test set is used to test the model to check the accuracy of the machine model predictions
