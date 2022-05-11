@@ -138,7 +138,7 @@ Setup tasks to ensure python codes ran include installation of conda, python ver
 9. conda install collections
 10. conda install matplotlib
 12. conda install seaborn
-13. conda install HTTPError
+13. conda install urllib
 14. pip install sklearn
 
 
