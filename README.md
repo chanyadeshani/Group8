@@ -127,15 +127,18 @@ Also seen when 'Variance of fare calculated using the define function' gave the 
 
 Setup tasks to ensure python codes ran include installation of conda, python version 3.9, jupyter, Visual code. All the conda environments were installed before the pip function was called in Anaconda prompt. This includes the following codes:
 
-1. conda env list
-
-2. conda install Python pip
-
-3. conda install Python = 3.9
-
-4. conda install jupyter
-
-5. conda install numpy
+1. conda create -n "Titanic"
+2. conda activate Titanic
+3. conda install Python pip
+4. conda install Python = 3.9
+5. conda install jupyter
+6. conda install numpy
+7. conda install pandas
+8. conda install math
+9. conda install collections
+10. conda install sklearn
+11. conda install matplotlib
+12. conda install seaborn
 
 
 The Titanic dataset was split into test and train sets so that the latter dataset can be used to train the machine learning model. The test set is used to test the model to check the accuracy of the machine model predictions
