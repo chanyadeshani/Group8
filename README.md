@@ -159,6 +159,8 @@ Reference:
 - Grus, J. (2019) Data science from scratch : first principles with python. Second edn. Sebastopol, CA: O'Reilly Media. Available at: INSERT-MISSING-URL (Accessed: May 5, 2022).
  - Sweigart, A. (2015) Automate the Boring Stuff with Python: Practical Programming for Total Beginners, CA: No Starch Press
  - https://pandas.pydata.org/pandas-docs/stable/user_guide/index.html#user-guide
+ - https://www.datasciencemadesimple.com/pie-chart-in-python-with-legends/
+ - https://data-flair.training/blogs/train-test-set-in-python-ml/
 
 TEAM MEMBERS AND CREDITS 
 
