@@ -138,18 +138,19 @@ Setup tasks to ensure python codes ran include installation of conda, python ver
 9. conda install collections
 10. conda install matplotlib
 12. conda install seaborn
-13. pip install sklearn
+13. conda install HTTPError
+14. pip install sklearn
 
-
-The Titanic dataset was split into test and train sets so that the latter dataset can be used to train the machine learning model. The test set is used to test the model to check the accuracy of the machine model predictions
 
 The first step in cleaning this dataset was dropping columns which were not so important to our analysis. For example, in the ‘Embarked’ column, missing values were replaced with the mode values using the approriate python codes
 
-Data visualization of answers to the questions listed in the Project Description, using Seaborn library and Matplotlib library and other libraries can be seen in our submitted pdf assessment file 
-
-Some classification techniques were employed to create predictive models of the titanic dataset like the Random forest classifier which provided at good model accuracy of 0.86 of the train dataset and Logistic regression classifier which gave a good prediction of 0.85 of the train dataset.
+Data visualization of answers to the questions listed in the Project Description, using Seaborn library and Matplotlib library and other libraries can be seen in our submitted pdf assessment file
 
 Feature engineering was used to summarize data. This helped to simplify our data transformation and improve the accuracy of machine models used in this assessment. 
+
+The Titanic dataset was split into test and train sets so that the latter dataset can be used to train the machine learning model. The test set is used to test the model to check the accuracy of the machine model predictions
+
+Some classification techniques were employed to create predictive models of the titanic dataset like the Random forest classifier which provided at good model accuracy of 0.86 of the train dataset and Logistic regression classifier which gave a good prediction of 0.85 of the train dataset.
 
 Classes 'Family' and 'Person' was created to summarize data about people traveled as family. For example, 'Person' Class was used to store values of passengers traveling with family.  'Family' Class was useful to calculate the percentage of adult males and females who survived. Dictionaries like 'family_dict' was created to store values of family members and 'family_group_dict' was used to show the number of families in the titanic, which was 170
 
