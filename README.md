@@ -130,7 +130,7 @@ Setup tasks to ensure python codes ran include installation of conda, python ver
 1. conda create -n "Titanic"
 2. conda activate Titanic
 3. conda install Python pip
-4. conda install Python = 3.9
+4. conda install Python=3.9
 5. conda install jupyter
 6. conda install numpy
 7. conda install pandas
